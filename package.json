@@ -1,0 +1,19 @@
+{
+  "name": "foodfy",
+  "version": "1.0.0",
+  "description": "an incredible website for you search your favorites recipes",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "sass": "sass public/assets/sass/index.scss public/assets/css/style.css"
+  },
+  "author": "Amanda Barboza",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.1"
+  }
+}
