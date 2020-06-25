@@ -3,64 +3,124 @@
   padding: 0;
   margin: 0;
   font-family: Roboto;
-  box-sizing: border-box;
 }
 
 header {
-  padding: 23px 150px;
+  padding: 23px 30vh;
   position: sticky;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
   a {
     font-size: 16px;
     color: #111111;
     text-decoration: none;
     font-weight: 300;
+    padding: 10px;
+    display: block;
     &:hover {
       color: #ff654e;
     }
     &:nth-child(2n) {
-      margin: 0 30px 0 0px;
+      margin: 0 30px 0 130px;
     }
     h1 {
       display: inline;
       font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
       letter-spacing: 1.5px;
       font-size: 28px;
-      margin: 0 120px 0 0;
     }
   }
 }
 
 main {
-  padding: 50px 150px;
+  padding: 30px 30vh;
 }
 
-section {
-  &.home {
+.banner {
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  background: #fbdfdb;
+  border-radius: 30px;
+  > div {
+    flex: 1 1 200px;
+  }
+  .flex {
     width: 100%;
+    h2 {
+      font-size: 1.5em;
+      color: #111111;
+      font-weight: 500px;
+    }
+    p {
+      opacity: 0.7;
+      font-weight: 300px;
+      font-size: 1em;
+      color: #000000;
+      line-height: 1.5;
+      max-width: 316px;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 320px) {
+    height: auto;
+    padding: 10px 25px;
+    .banner {
+      img {
+        visibility: hidden;
+      }
+    }
+  }
+  @media screen and (min-width: 1000px) {
     height: 366px;
-    background: #fbdfdb;
-    border-radius: 30px;
-    div {
-      padding: 0 50px 0 40px;
-      .flex {
-        display: flex;
-        flex-direction: column;
-        height: 366px;
-        background: url('/img/chef.png') no-repeat bottom right;
-        h2 {
-          padding:125px 0 0;
-          font-size: 32px;
-          color: #111111;
-          font-weight: 500;
+    padding: 0 100px;
+
+    .banner {
+      img {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.mais-acessadas {
+  margin: 50px 0;
+  h3 {
+    font-size: 24px;
+    color: #111111;
+    font-weight: 700;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    .card {
+      margin: 20px 0;
+      width: 100%;
+      .card-img {
+        margin: 0 0 10px;
+        img{
+          border-radius: 15px;
+          max-width: 100%;
         }
-        p {
-          opacity: 0.7;
-          font-weight: 300;
+      }
+      .card-name {
+        h6{
           font-size: 18px;
-          color: #000000;
+          color: #111111;
+          font-weight: 400;
           line-height: 28px;
-          max-width: 316px;
         }
+      }
+      .card-author {
+        font-weight: 300;
+        font-size: 14px;
+        color: #777777;
       }
     }
   }
@@ -71,6 +131,8 @@ footer {
   text-align: center;
   padding: 23px 0;
   max-height: 62px;
+  bottom: 0;
+  width: 100%;
 
   p {
     font-size: 14px;

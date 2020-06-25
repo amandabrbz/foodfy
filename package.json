@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
-    "sass": "sass public/assets/sass/index.scss public/assets/css/style.css"
+    "css": "sass --watch --no-source-map public/assets/sass/index.scss:public/assets/css/style.css --style compressed"
   },
   "author": "Amanda Barboza",
   "license": "ISC",
