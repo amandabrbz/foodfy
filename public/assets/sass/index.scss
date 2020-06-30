@@ -122,13 +122,13 @@ main {
       width: 100%;
       .card-img {
         margin: 0 0 10px;
-        img{
+        img {
           border-radius: 15px;
           max-width: 100%;
         }
       }
       .card-name {
-        h6{
+        h6 {
           font-size: 18px;
           color: #111111;
           font-weight: 400;
@@ -141,6 +141,28 @@ main {
         color: #777777;
       }
     }
+  }
+}
+
+article {
+  h1 {
+    font-weight: 500;
+    font-size: 24px;
+    color: #111111;
+    margin: 0 0 30px;
+  }
+  h2 {
+    margin: 0 0 30px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #111111;
+  }
+  p {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+    font-weight: 300;
+    margin: 25px 0;
   }
 }
 

@@ -15,6 +15,12 @@ nunjucks.configure("views", {
 server.get("/", function (req, res) {
   return res.render("home");
 });
+server.get("/sobre", function (req, res) {
+  return res.render("about");
+});
+server.get("/receitas", function (req, res) {
+  return res.render("recipe");
+});
 
 server.use(function(req, res) {
   return res.status(404).render("not-found");
