@@ -2,7 +2,7 @@ const express = require("express"); //servidor
 const nunjucks = require("nunjucks"); //blades
 
 const server = express();
-const recipes = require("./recipes");
+const recipes = require("./data/recipes");
 
 server.use(express.static("public/assets"));
 
