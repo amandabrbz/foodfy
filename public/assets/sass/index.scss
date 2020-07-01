@@ -18,8 +18,7 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
-  padding-bottom: 6rem;
+  padding-bottom: 3rem;
   min-height: 100%;
 }
 
@@ -27,9 +26,12 @@ header {
   padding: 23px 30vh;
   position: sticky;
   display: flex;
-  flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: baseline;
+
+  @media screen and (min-width: 320px) and (max-width: 770px) {
+    padding: 23px 3vh;
+  }
   a {
     font-size: 16px;
     color: #111111;
@@ -42,6 +44,9 @@ header {
     }
     &:nth-child(2n) {
       margin: 0 30px 0 130px;
+      @media screen and (min-width: 320px) and (max-width: 770px) {
+        margin: 0;
+      }
     }
     h1 {
       display: inline;
@@ -54,6 +59,9 @@ header {
 
 main {
   padding: 30px 30vh;
+  @media screen and (min-width: 320px) and (max-width: 770px) {
+    padding: 10px 3vh;
+  }
 }
 
 .banner {
@@ -85,9 +93,9 @@ main {
     }
   }
 
-  @media screen and (min-width: 320px) {
+  @media screen and (min-width: 320px) and (max-width: 770px) {
     height: auto;
-    padding: 10px 25px;
+    padding: 25px 25px;
     .banner {
       img {
         visibility: hidden;
@@ -117,6 +125,9 @@ main {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 20px;
+    @media screen and (min-width: 320px) and (max-width: 770px) {
+      grid-template-columns: auto;
+    }
     .card {
       margin: 20px 0;
       width: 100%;
@@ -179,4 +190,44 @@ footer {
     font-weight: 300;
     color: #999999;
   }
+}
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.modal {
+  background: #fff;
+  width: 90%;
+  height: 90%;
+  margin: 5vh auto;
+  position: relative;
+}
+
+.modal .close-modal {
+  color: #fff;
+  z-index: 1000;
+  position: absolute;
+  right: 0;
+  margin: 10px;
+  cursor: pointer;
 }

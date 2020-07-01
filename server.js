@@ -1,8 +1,8 @@
 const express = require("express"); //servidor
 const nunjucks = require("nunjucks"); //blades
+const recipes = require("./data/recipes");
 
 const server = express();
-const recipes = require("./data/recipes");
 
 server.use(express.static("public/assets"));
 
@@ -11,6 +11,7 @@ server.set("view engine", "njk");
 nunjucks.configure("views", {
   express: server,
   autoescape: false,
+  noCache: true,
 });
 
 server.get("/", function (req, res) {
@@ -20,7 +21,7 @@ server.get("/sobre", function (req, res) {
   return res.render("about");
 });
 server.get("/receitas", function (req, res) {
-  return res.render("recipe");
+  return res.render("recipe", { items: recipes });
 });
 
 server.use(function (req, res) {
